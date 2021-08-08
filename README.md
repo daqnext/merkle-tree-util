@@ -4,7 +4,6 @@
 
 #### ``` npm install merkle-tree-util ```
 #### ``` npm install ethers ```
-#### ``` npm install ethers ```
 #### Example :
 
 ```

@@ -1,6 +1,6 @@
 {
   "name": "merkle-tree-util",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "description": "merkle tree util",
   "main": "./dist/src/index.js",
   "scripts": {
