@@ -1,2 +1,4 @@
 # merkle-tree-util
-merkle tree util 
+
+### how to use 
+

@@ -26,7 +26,6 @@ class Leaf{
 
 class MTree{
 
-
     public static buf2hex(b: Buffer) {
         return '0x' + b.toString('hex')
     }
@@ -87,6 +86,7 @@ class MTree{
                 index:this.leaves[index].index,
                 addr:this.leaves[index].addr,
                 amount:this.leaves[index].amount,
+                buff:this.leaves[index].buff,
                 proof:this.tree.generateProof(MTree.buf2hex(this.leaves[index].buff))
             };
         }else{
@@ -98,10 +98,18 @@ class MTree{
         if (this.is_built) {
             return {
                 roothash:this.tree.root,
-                proof:this.leaves.map((l) => this.gen_proof(l.index))
+                proofs:this.leaves.map((l) => this.gen_proof(l.index))
             };
         }else{
             return null;
+        }
+    }
+
+    public verifyProof(target: string, proof: string[]): boolean {
+        if (this.is_built) {
+            return this.tree.verifyProof(proof,target)
+        }else{
+            return false;
         }
     }
 
